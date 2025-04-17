@@ -13,17 +13,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 262 80% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 262 40% 96%;
+    --secondary-foreground: 262 60% 30%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 262 40% 96.1%;
+    --muted-foreground: 262 30% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 60% 95%;
+    --accent-foreground: 262 60% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -97,5 +97,35 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] .ltr-only {
+    display: none;
+  }
+  
+  [dir="ltr"] .rtl-only {
+    display: none;
+  }
+  
+  /* Flip transform for RTL */
+  [dir="rtl"] .flip-in-rtl {
+    transform: scaleX(-1);
+  }
+  
+  /* Adjust margins in RTL */
+  [dir="rtl"] .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  
+  [dir="rtl"] .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
   }
 }
